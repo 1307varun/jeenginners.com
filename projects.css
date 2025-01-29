@@ -1,0 +1,549 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.header {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: nowrap; /* Ensure items are in a single row */
+}
+
+#image {
+  height: 130px;
+  width: auto;  /* Ensures the image maintains its aspect ratio */
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.contact p {
+  margin-right: 20px; /* Adds space between phone/email */
+}
+
+.contact a {
+  margin-left: 15px; /* Adds space between Instagram/Facebook icons */
+}
+/* Header section Responsiveness */
+/* Phone view */
+@media (max-width: 480px) {
+  .header {
+      flex-wrap: wrap; /* Ensures wrapping for smaller screens */
+      height: auto; /* Allows height to adjust dynamically */
+      justify-content: center; /* Center-aligns items for balance */
+      padding: 10px;
+  }
+
+  #image {
+      height: 80px; /* Reduces image size */
+      margin-right: 10px; /* Adds spacing between image and contact */
+  }
+
+  .contact {
+      flex-direction: row; /* Keeps items in a row */
+      flex-wrap: wrap; /* Allows wrapping if space runs out */
+      justify-content: center; /* Center-aligns contact items */
+      gap: 10px; /* Adds space between elements */
+  }
+
+  .contact p {
+      margin: 0 10px; /* Adds spacing between text items */
+      font-size: 12px; /* Reduces font size for smaller screens */
+  }
+
+  .contact a {
+      margin-left: 10px; /* Adds space for social icons */
+  }
+}
+
+/* Tablet view */
+@media (min-width: 481px) and (max-width: 768px) {
+  .header {
+      flex-wrap: nowrap; /* Ensures items stay in one row */
+      height: auto;
+      justify-content: space-between; /* Spreads items evenly */
+      padding: 15px;
+  }
+
+  #image {
+      height: 100px; /* Slightly larger image for tablets */
+  }
+
+  .contact {
+      flex-wrap: nowrap; /* Prevents wrapping */
+      justify-content: space-between; /* Spreads contact items evenly */
+      gap: 15px; /* Adds space between elements */
+  }
+
+  .contact p {
+      margin: 0 10px; /* Adjusts spacing between text items */
+  }
+
+  .contact a {
+      margin-left: 15px; /* Adds space for social icons */
+  }
+}
+
+/* Desktop view */
+@media (min-width: 769px) and (max-width: 1280px) {
+  .header {
+      height: 150px; /* Maintains the original height */
+      justify-content: space-between; /* Aligns items to fill space */
+      padding: 20px;
+  }
+
+  #image {
+      height: 130px; /* Maintains desktop image size */
+  }
+
+  .contact {
+      flex-wrap: nowrap; /* Ensures all items stay in one row */
+      justify-content: flex-end; /* Aligns items to the right */
+  }
+
+  .contact p {
+      margin-right: 10px; /* Spacing between phone/email */
+  }
+
+  .contact a {
+      margin-left: 15px; /* Space between social icons */
+  }
+}
+
+
+/* Navigation Bar */
+/* General Navigation Bar Styles */
+/* General Navigation Bar Styles */
+.nav {
+  height: auto; /* Allow dynamic height for wrapping */
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap when space is insufficient */
+  justify-content: space-evenly; /* Distribute items evenly */
+  align-items: center;
+  padding: 5px 0; /* Add padding for better appearance */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #575757;
+  color: #ddd;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position dropdown below the navbar */
+  left: 0;
+  background-color: #333;
+  color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 20; /* Ensure dropdown is above other elements */
+  min-width: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #575757;
+}
+
+.arrow-down::after {
+  content: '\25BE';
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* Responsive Adjustments */
+
+/* Phone view */
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: flex-start; /* Align items to the left */
+    padding: 10px; /* Add padding for better spacing */
+  }
+
+  .nav a {
+    flex: 1 1 auto; /* Allow links to adjust and fit dynamically */
+    text-align: center; /* Center text for smaller screens */
+    padding: 10px 5px; /* Reduce padding to fit more links */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .dropdown-content {
+    position: absolute; /* Ensure dropdown overlaps correctly */
+    top: 100%; /* Position dropdown below navbar */
+    left: 0;
+    width: 100%; /* Match dropdown width to navbar */
+    z-index: 20;
+  }
+}
+
+/* Tablet view */
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    flex-wrap: wrap; /* Allow wrapping for narrower screens */
+    justify-content: space-evenly; /* Spread links evenly */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+  }
+
+  .nav a {
+    padding: 10px; /* Adjust padding for tablet view */
+  }
+
+  .dropdown-content {
+    top: 100%; /* Position dropdown below the parent */
+    left: 0;
+    min-width: 150px; /* Adjust width for tablet view */
+  }
+}
+
+/* Desktop view */
+@media (min-width: 769px) and (max-width:1280px) {
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    justify-content: space-evenly; /* Evenly distribute links */
+    padding: 0; /* Remove extra padding */
+  }
+
+  .dropdown-content {
+    position: absolute; /* Ensure dropdown overlaps correctly */
+    top: 100%; /* Position dropdown below the parent */
+    left: 0;
+    min-width: 200px; /* Maintain original width for dropdown */
+  }
+}
+ 
+/* Section1 */
+.section1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right img {
+  width: 100%;      /* Take full width of the container */
+  max-width: 550px; /* Limit the maximum width for larger screens */
+  height: auto;     /* Maintain the aspect ratio */
+  border-radius: 5px;
+  object-fit: cover; /* Ensures proper cropping for non-standard aspect ratios */
+}
+
+/* Responsiveness */
+
+/* Phone View */
+@media (max-width: 480px) {
+  .section1 {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .right {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .right img {
+    width: 100%; /* Full width for phone view */
+    max-width: 100%; /* Remove max-width limit for smaller devices */
+    height: auto;
+  }
+
+  .left h1 {
+    font-size: 1.5rem;
+  }
+
+  .left p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Tablet View */
+@media (min-width: 481px) and (max-width: 768px) {
+  .section1 {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .right {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .right img {
+    width: 100%; /* Full width for tablet view */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .left h1 {
+    font-size: 2rem;
+  }
+
+  .left p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+  .section1 {
+    flex-direction: row;
+    padding: 30px;
+  }
+
+  .left {
+    width: 60%;
+    text-align: left;
+  }
+
+  .right {
+    width: 40%;
+  }
+
+  .right img {
+    max-width: 550px; /* Ensure the image is properly sized */
+    height: auto;     /* Maintain the aspect ratio */
+  }
+
+  .left h1 {
+    font-size: 2.5rem;
+  }
+
+  .left p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
+/* section2 */
+.section2 {
+  width: 90%;
+  /* Remove fixed height */
+  margin: 30px;
+  margin-left: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: stretch;
+  justify-content: space-between;
+  padding: 30px;
+  overflow: hidden; /* Prevents images from overflowing */
+  box-sizing: border-box;
+}
+
+#icons {
+  height: 120px;
+  width: 170px;
+}
+
+/* Responsiveness for Section2 */
+
+/* Phone View (max-width: 480px) */
+@media (max-width: 480px) {
+  .section2 {
+      justify-content: center; /* Center images on smaller screens */
+      padding: 10px;
+      margin: 20px auto; /* Adjust margins for small screens */
+  }
+
+  #icons {
+      height: 80px; /* Smaller size for images */
+      width: 110px;
+      margin: 5px; /* Add spacing between images */
+  }
+}
+
+/* Tablet View (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .section2 {
+      justify-content: space-evenly; /* Better alignment for medium screens */
+      padding: 20px;
+      margin: 20px auto;
+  }
+
+  #icons {
+      height: 100px; /* Medium size for images */
+      width: 140px;
+      margin: 8px;
+  }
+}
+
+/* Desktop View (769px to 1280px) */
+@media (min-width: 769px) and (max-width: 1280px) {
+  .section2 {
+      justify-content: space-between; /* Maintain original layout for desktops */
+      padding: 30px;
+      margin: 30px auto;
+  }
+
+  #icons {
+      height: 120px; /* Default size for images */
+      width: 170px;
+      margin: 10px;
+  }
+}
+
+/* footer section */
+.footer {
+  width: 100%;
+  background-color: black;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  color: white;
+  box-sizing: border-box;
+}
+
+.foot1,
+.foot2,
+.foot3 {
+  flex: 1 1 30%; /* Flex properties for responsiveness */
+  max-width: 350px;
+  min-width: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.foot2 p,
+.foot1 p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.foot3 .image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  gap: 10px;
+}
+
+.foot3 img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Responsiveness */
+
+/* Phone View */
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column; /* Stack the sections vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .foot1,
+  .foot2,
+  .foot3 {
+    width: 100%; /* Take full width */
+    margin-bottom: 20px;
+  }
+
+  .foot3 .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  }
+}
+
+/* Tablet View */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer {
+    justify-content: center; /* Center the content */
+    gap: 20px;
+  }
+
+  .foot1,
+  .foot2,
+  .foot3 {
+    flex: 1 1 45%; /* Allow sections to take more space */
+    max-width: 350px;
+  }
+
+  .foot3 .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 images per row */
+  }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+  .footer {
+    justify-content: space-between;
+  }
+
+  .foot3 .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* Maintain 3 images per row */
+  }
+}
