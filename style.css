@@ -581,14 +581,14 @@ body {
   transform: scale(1.05);
 }
 
-.red-box {
+/* .red-box {
   height: 50px;
   background-color: red;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px; /* Slightly smaller font for better adaptability */
+  font-size: 20px; 
   font-weight: bold;
   position: absolute;
   bottom: 0;
@@ -596,12 +596,13 @@ body {
   width: 100%;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-}
+} */
 
 #image1 {
-  height: 250px;
+  height: 300px;
   width: 100%; /* Match the width of the parent container */
   object-fit: cover; /* Ensure images maintain aspect ratio */
+  border: 1px solid black;
 }
 
 /* Responsive Styles */
@@ -630,7 +631,7 @@ body {
   }
 
   #image1 {
-      height: 200px; /* Adjust image height */
+      height: 250px; /* Adjust image height */
   }
 
   .red-box {
@@ -646,7 +647,7 @@ body {
   }
 
   #image1 {
-      height: 250px;
+      height: 300px;
   }
 
   .red-box {
@@ -656,7 +657,7 @@ body {
 /* footer section */
 .footer {
   width: 100%;
-  background-color: black;
+  background-color:#B3C7D6FF;
   padding: 20px 30px;
   display: flex;
   justify-content: space-between;

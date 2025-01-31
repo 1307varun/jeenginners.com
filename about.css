@@ -1,17 +1,4 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    /* background-image: url(back.jpeg); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -93,7 +80,7 @@ body {
   }
 
   #image {
-      height: 90px; /* Slightly larger image for tablets */
+      height: 100px; /* Slightly larger image for tablets */
   }
 
   .contact {
@@ -103,7 +90,7 @@ body {
   }
 
   .contact p {
-      margin: 5px 5px; /* Adjusts spacing between text items */
+      margin: 0 10px; /* Adjusts spacing between text items */
   }
 
   .contact a {
@@ -112,7 +99,7 @@ body {
 }
 
 /* Desktop view */
-@media (min-width: 769px) and (max-width: 1280px) {
+@media (min-width: 769px){
   .header {
       height: 150px; /* Maintains the original height */
       justify-content: space-between; /* Aligns items to fill space */
@@ -137,81 +124,138 @@ body {
   }
 }
 
-/* Navbar */
+
+/* Navigation Bar */
+/* General Navigation Bar Styles */
+/* General Navigation Bar Styles */
 .nav {
-    height: 40px;
-    width: 100%;
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-evenly;
+  height: auto; /* Allow dynamic height for wrapping */
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap when space is insufficient */
+  justify-content: space-evenly; /* Distribute items evenly */
+  align-items: center;
+  padding: 5px 0; /* Add padding for better appearance */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #575757;
+  color: #ddd;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position dropdown below the navbar */
+  left: 0;
+  background-color: #333;
+  color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 20; /* Ensure dropdown is above other elements */
+  min-width: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #575757;
+}
+
+.arrow-down::after {
+  content: '\25BE';
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* Responsive Adjustments */
+
+/* Phone view */
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: flex-start; /* Align items to the left */
+    padding: 10px; /* Add padding for better spacing */
   }
 
   .nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-  }
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
+    flex: 1 1 auto; /* Allow links to adjust and fit dynamically */
+    text-align: center; /* Center text for smaller screens */
+    padding: 10px 5px; /* Reduce padding to fit more links */
+    font-size: 14px; /* Adjust font size for smaller screens */
   }
 
   .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    color: white;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    width: 200px;
+    position: absolute; /* Ensure dropdown overlaps correctly */
+    top: 100%; /* Position dropdown below navbar */
+    left: 0;
+    width: 100%; /* Match dropdown width to navbar */
+    z-index: 20;
+  }
+}
+
+/* Tablet view */
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    flex-wrap: wrap; /* Allow wrapping for narrower screens */
+    justify-content: space-evenly; /* Spread links evenly */
+    padding: 10px 20px; /* Adjust padding for better spacing */
   }
 
-  .dropdown:hover .dropdown-content {
-    display: block;
+  .nav a {
+    padding: 10px; /* Adjust padding for tablet view */
   }
 
-  .dropdown-content a {
-    padding: 10px;
-    display: block;
-    text-decoration: none;
-    color: white;
+  .dropdown-content {
+    top: 100%; /* Position dropdown below the parent */
+    left: 0;
+    min-width: 150px; /* Adjust width for tablet view */
+  }
+}
+
+/* Desktop view */
+@media (min-width: 769px){
+  .nav {
+    flex-direction: row; /* Keep links in a row */
+    justify-content: space-evenly; /* Evenly distribute links */
+    padding: 0; /* Remove extra padding */
   }
 
-  .dropdown-content a:hover {
-    background-color: #575757;
+  .dropdown-content {
+    position: absolute; /* Ensure dropdown overlaps correctly */
+    top: 100%; /* Position dropdown below the parent */
+    left: 0;
+    min-width: 200px; /* Maintain original width for dropdown */
   }
+}
 
-  .arrow-down::after {
-    content: '\25BE';
-    margin-left: 5px;
-  }
-
-  .arrow-right::after {
-    content: '\25B8';
-    margin-left: 5px;
-  }
-
-  .sub-dropdown {
-    position: relative;
-  }
-
-  .sub-dropdown-content {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background-color: #333;
-    color: white;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .sub-dropdown:hover .sub-dropdown-content {
-    display: block;
-  }
 /* Section Styles */
 .section {
   display: none;
@@ -320,7 +364,7 @@ p {
 /* Footer Styles */
 .footer {
   width: 100%;
-  background-color: black;
+  background-color: #B3C7D6FF;
   padding: 20px 30px;
   display: flex;
   justify-content: space-between;

@@ -2,14 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
-  }
-  
-  .header {
+}
+
+.header {
     height: 150px;
     width: 100%;
     display: flex;
@@ -17,118 +17,118 @@
     align-items: center;
     padding: 10px 20px;
     flex-wrap: nowrap; /* Ensure items are in a single row */
-  }
-  
-  #image {
+}
+
+#image {
     height: 130px;
     width: auto;  /* Ensures the image maintains its aspect ratio */
-  }
-  
-  .contact {
+}
+
+.contact {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-right: 10px;
-  }
-  
-  .contact p {
+}
+
+.contact p {
     margin-right: 20px; /* Adds space between phone/email */
-  }
-  
-  .contact a {
+}
+
+.contact a {
     margin-left: 15px; /* Adds space between Instagram/Facebook icons */
-  }
-  /* Header section Responsiveness */
-  /* Phone view */
-  @media (max-width: 480px) {
+}
+/* Header section Responsiveness */
+/* Phone view */
+@media (max-width: 480px) {
     .header {
         flex-wrap: wrap; /* Ensures wrapping for smaller screens */
         height: auto; /* Allows height to adjust dynamically */
         justify-content: center; /* Center-aligns items for balance */
         padding: 10px;
     }
-  
+
     #image {
         height: 80px; /* Reduces image size */
         margin-right: 10px; /* Adds spacing between image and contact */
     }
-  
+
     .contact {
         flex-direction: row; /* Keeps items in a row */
         flex-wrap: wrap; /* Allows wrapping if space runs out */
         justify-content: center; /* Center-aligns contact items */
         gap: 10px; /* Adds space between elements */
     }
-  
+
     .contact p {
         margin: 0 10px; /* Adds spacing between text items */
         font-size: 12px; /* Reduces font size for smaller screens */
     }
-  
+
     .contact a {
         margin-left: 10px; /* Adds space for social icons */
     }
-  }
-  
-  /* Tablet view */
-  @media (min-width: 481px) and (max-width: 768px) {
+}
+
+/* Tablet view */
+@media (min-width: 481px) and (max-width: 768px) {
     .header {
         flex-wrap: nowrap; /* Ensures items stay in one row */
         height: auto;
         justify-content: space-between; /* Spreads items evenly */
         padding: 15px;
     }
-  
+
     #image {
         height: 100px; /* Slightly larger image for tablets */
     }
-  
+
     .contact {
         flex-wrap: nowrap; /* Prevents wrapping */
         justify-content: space-between; /* Spreads contact items evenly */
         gap: 15px; /* Adds space between elements */
     }
-  
+
     .contact p {
         margin: 0 10px; /* Adjusts spacing between text items */
     }
-  
+
     .contact a {
         margin-left: 15px; /* Adds space for social icons */
     }
-  }
-  
-  /* Desktop view */
-  @media (min-width: 769px) and (max-width: 1280px) {
+}
+
+/* Desktop view */
+@media (min-width: 769px){
     .header {
         height: 150px; /* Maintains the original height */
         justify-content: space-between; /* Aligns items to fill space */
         padding: 20px;
     }
-  
+
     #image {
         height: 130px; /* Maintains desktop image size */
     }
-  
+
     .contact {
         flex-wrap: nowrap; /* Ensures all items stay in one row */
         justify-content: flex-end; /* Aligns items to the right */
     }
-  
+
     .contact p {
         margin-right: 10px; /* Spacing between phone/email */
     }
-  
+
     .contact a {
         margin-left: 15px; /* Space between social icons */
     }
-  }
-  
-  
-  /* Navigation Bar */
-  /* General Navigation Bar Styles */
-  /* General Navigation Bar Styles */
-  .nav {
+}
+
+
+/* Navigation Bar */
+/* General Navigation Bar Styles */
+/* General Navigation Bar Styles */
+.nav {
     height: auto; /* Allow dynamic height for wrapping */
     width: 100%;
     background-color: #333;
@@ -241,7 +241,7 @@
   }
   
   /* Desktop view */
-  @media (min-width: 769px) and (max-width:1280px) {
+  @media (min-width: 769px){
     .nav {
       flex-direction: row; /* Keep links in a row */
       justify-content: space-evenly; /* Evenly distribute links */
@@ -255,161 +255,8 @@
       min-width: 200px; /* Maintain original width for dropdown */
     }
   }
-  
-    /* General Styling */
-  .heading {
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .description {
-    font-style: oblique;
-    font-weight: 100;
-    font-size: 1.2rem;
-    text-align: justify;
-    padding: 0 20px;
-    line-height: 1.6;
-  }
-  
-  /* Section Styling */
-  .section1 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 30px;
-  }
-  
-  /* Image Styling */
-  .responsive-img {
-    height: 500px;
-    width: 100%;
-    max-width: 550px;
-    border-radius: 5px;
-  }
-  
-  /* Responsive Media Queries */
-  
-  /* Phone View */
-  @media (max-width: 480px) {
-    .heading {
-      font-size: 1.5rem;
-    }
-  
-    .description {
-      font-size: 1rem;
-      padding: 0 10px;
-    }
-  
-    .section1 {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .responsive-img {
-        height: 400px;
-      max-width: 90%;
-    }
-  }
-  
-  /* Tablet View */
-  @media (min-width: 481px) and (max-width: 768px) {
-    .heading {
-      font-size: 1.8rem;
-    }
-  
-    .description {
-      font-size: 1.1rem;
-      padding: 0 15px;
-    }
-  
-    .section1 {
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-  
-    .responsive-img {
-        height: 400px;
-      max-width: 85%;
-    }
-  }
-  
-  /* Desktop View */
-  @media (min-width: 769px) and (max-width: 1280px) {
-    .heading {
-      font-size: 2rem;
-    }
-  
-    .description {
-      font-size: 1.2rem;
-      padding: 0 30px;
-    }
-  
-    .section1 {
-      justify-content: space-between;
-    }
-  
-    .responsive-img {
-        height: 500px;
-      max-width: 450px;
-    }
-  }
-  /* Section Styling */
-  .section2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 20px;
-  }
-  
-  /* Image Styling */
-  .section2 .responsive-img {
-    width: 100%;
-    max-width: 550px;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  /* Responsive Media Queries */
-  
-  /* Phone View */
-  @media (max-width: 480px) {
-    .section2 {
-      padding: 10px;
-    }
-  
-    .section2 .responsive-img {
-      max-width: 90%; /* Reduce width for smaller screens */
-    }
-  }
-  
-  /* Tablet View */
-  @media (min-width: 481px) and (max-width: 768px) {
-    .section2 {
-      padding: 15px;
-    }
-  
-    .section2 .responsive-img {
-      max-width: 75%;
-    }
-  }
-  
-  /* Desktop View */
-  @media (min-width: 769px) and (max-width: 1280px) {
-    .section2 {
-      padding: 20px;
-    }
-  
-    .section2 .responsive-img {
-      max-width: 550px; /* Maintain max size for desktop */
-    }
-  }
-  
-    /* footer section */
-  .footer {
+  /* footer section */
+.footer {
     width: 100%;
     background-color:#B3C7D6FF;
     padding: 20px 30px;
@@ -502,4 +349,79 @@
       grid-template-columns: repeat(3, 1fr); /* Maintain 3 images per row */
     }
   }
-    
+  /* section2 */
+.section2 {
+  width: 90%;
+  /* Remove fixed height */
+  margin: 30px;
+  margin-left: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: stretch;
+  justify-content: space-between;
+  padding: 30px;
+  overflow: hidden; /* Prevents images from overflowing */
+  box-sizing: border-box;
+}
+
+#icons {
+  height: 120px;
+  width: 170px;
+  margin: 15px;/*Adds spacing from all sides*/
+  border-radius: 5px;/*optional:Adds rounded corners */
+}
+
+/* Responsiveness for Section2 */
+
+/* Phone View (max-width: 480px) */
+@media (max-width: 480px) {
+  .section2 {
+      justify-content: center; /* Center images on smaller screens */
+      padding: 10px;
+      margin: 20px auto; /* Adjust margins for small screens */
+  }
+
+  #icons {
+      height: 80px; /* Smaller size for images */
+      width: 110px;
+      margin: 5px; /* Add spacing between images */
+  }
+}
+
+/* Tablet View (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .section2 {
+      justify-content: space-evenly; /* Better alignment for medium screens */
+      padding: 20px;
+      margin: 20px auto;
+  }
+
+  #icons {
+      height: 100px; /* Medium size for images */
+      width: 140px;
+      margin: 8px;
+  }
+}
+
+/* Desktop View (769px to 1280px) */
+@media (min-width: 769px) and (max-width: 1280px) {
+  .section2 {
+      justify-content: space-between; /* Maintain original layout for desktops */
+      padding: 30px;
+      margin: 30px auto;
+  }
+
+  #icons {
+      height: 120px; /* Default size for images */
+      width: 170px;
+      margin: 10px;
+  }
+}
+#headh1
+{
+  color: red;
+  font-size: 50px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  justify-content: center;
+}
